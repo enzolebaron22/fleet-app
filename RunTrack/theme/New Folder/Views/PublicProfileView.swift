@@ -1,0 +1,82 @@
+import SwiftUI
+import FirebaseAuth
+
+/// Affiche le profil public d'un autre utilisateur, avec un bouton Suivre.
+struct PublicProfileView: View {
+    let profile: PublicProfile
+
+    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var socialManager: SocialManager
+
+    @State private var isFollowing = false
+    @State private var isLoading = true
+
+    var body: some View {
+        VStack(spacing: 16) {
+            AvatarView(url: profile.photoURL, name: profile.name)
+                .frame(width: 90, height: 90)
+
+            Text(profile.name)
+                .font(.title3)
+                .bold()
+                .foregroundStyle(.white)
+
+            if let username = profile.username {
+                Text("@\(username)")
+                    .font(.subheadline)
+                    .foregroundStyle(AppTheme.textSecondary)
+            }
+
+            if profile.isMentor {
+                Label("Mentor", systemImage: "star.fill")
+                    .font(.caption)
+                    .bold()
+                    .foregroundStyle(AppTheme.accent)
+            }
+
+            if isLoading {
+                ProgressView()
+            } else {
+                Button {
+                    Task { await toggleFollow() }
+                } label: {
+                    Text(isFollowing ? "Suivi(e)" : "Suivre")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(isFollowing ? AppTheme.separator : AppTheme.accent)
+                .padding(.horizontal, 40)
+            }
+
+            Spacer()
+        }
+        .padding(.top, 30)
+        .background(AppTheme.background.ignoresSafeArea())
+        .navigationTitle("Profil")
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
+            guard let currentUid = Auth.auth().currentUser?.uid else {
+                isLoading = false
+                return
+            }
+            isFollowing = await socialManager.isFollowing(currentUserId: currentUid, targetUserId: profile.id)
+            isLoading = false
+        }
+    }
+
+    private func toggleFollow() async {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        isLoading = true
+        do {
+            if isFollowing {
+                try await socialManager.unfollow(currentUserId: currentUid, targetUserId: profile.id)
+            } else {
+                try await socialManager.follow(currentUserId: currentUid, targetUserId: profile.id)
+            }
+            isFollowing.toggle()
+        } catch {
+            // Non bloquant pour ce soir.
+        }
+        isLoading = false
+    }
+}

@@ -1,0 +1,863 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C68810AB30607C44007A409C /* AdviceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688109C30607C44007A409C /* AdviceEngine.swift */; };
+		C68810AE30607C44007A409C /* RunTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68810A830607C44007A409C /* RunTrackApp.swift */; };
+		C68810B430607C44007A409C /* AdviceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688109C30607C44007A409C /* AdviceEngine.swift */; };
+		C68810B730607C44007A409C /* RunTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68810A830607C44007A409C /* RunTrackApp.swift */; };
+		C68810BD30607C44007A409C /* AdviceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688109C30607C44007A409C /* AdviceEngine.swift */; };
+		C68810C030607C44007A409C /* RunTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68810A830607C44007A409C /* RunTrackApp.swift */; };
+		C68810FC3061400F007A409C /* mapregionhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68810FB3061400F007A409C /* mapregionhelper.swift */; };
+		C68810FD3061400F007A409C /* mapregionhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68810FB3061400F007A409C /* mapregionhelper.swift */; };
+		C68810FE3061400F007A409C /* mapregionhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68810FB3061400F007A409C /* mapregionhelper.swift */; };
+		C688110530614B70007A409C /* notificationmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688110430614B70007A409C /* notificationmanager.swift */; };
+		C688110630614B70007A409C /* notificationmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688110430614B70007A409C /* notificationmanager.swift */; };
+		C688110730614B70007A409C /* notificationmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688110430614B70007A409C /* notificationmanager.swift */; };
+		C688110E30614FAB007A409C /* locationtracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688110D30614FAB007A409C /* locationtracker.swift */; };
+		C688110F30614FAB007A409C /* locationtracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688110D30614FAB007A409C /* locationtracker.swift */; };
+		C688111030614FAB007A409C /* locationtracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688110D30614FAB007A409C /* locationtracker.swift */; };
+		C6881122306163FC007A409C /* currentlocationprovider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6881121306163FC007A409C /* currentlocationprovider.swift */; };
+		C6881123306163FC007A409C /* currentlocationprovider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6881121306163FC007A409C /* currentlocationprovider.swift */; };
+		C6881124306163FC007A409C /* currentlocationprovider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6881121306163FC007A409C /* currentlocationprovider.swift */; };
+		C688112630616435007A409C /* routegenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688112530616435007A409C /* routegenerator.swift */; };
+		C688112730616435007A409C /* routegenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688112530616435007A409C /* routegenerator.swift */; };
+		C688112830616435007A409C /* routegenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688112530616435007A409C /* routegenerator.swift */; };
+		C688112B30616C04007A409C /* apptheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688112A30616C04007A409C /* apptheme.swift */; };
+		C688112C30616C04007A409C /* apptheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688112A30616C04007A409C /* apptheme.swift */; };
+		C688112D30616C04007A409C /* apptheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688112A30616C04007A409C /* apptheme.swift */; };
+		C688112F30617D9A007A409C /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C688112E30617D9A007A409C /* assets.xcassets */; };
+		C688113030617D9A007A409C /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C688112E30617D9A007A409C /* assets.xcassets */; };
+		C688113130617D9A007A409C /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C688112E30617D9A007A409C /* assets.xcassets */; };
+		C688113830619F6E007A409C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C688113730619F6E007A409C /* FirebaseAuth */; };
+		C688113A30619F6E007A409C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C688113930619F6E007A409C /* FirebaseFirestore */; };
+		C68811403061A4C3007A409C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C688113F3061A4C3007A409C /* GoogleService-Info.plist */; };
+		C68811413061A4C3007A409C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C688113F3061A4C3007A409C /* GoogleService-Info.plist */; };
+		C68811423061A4C3007A409C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C688113F3061A4C3007A409C /* GoogleService-Info.plist */; };
+		C68811453061AB2C007A409C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C68811443061AB2C007A409C /* GoogleSignIn */; };
+		C68811473061AB2C007A409C /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C68811463061AB2C007A409C /* GoogleSignInSwift */; };
+		C688114B3061AC77007A409C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688114A3061AC77007A409C /* AuthManager.swift */; };
+		C688114C3061AC77007A409C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688114A3061AC77007A409C /* AuthManager.swift */; };
+		C688114D3061AC77007A409C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688114A3061AC77007A409C /* AuthManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C688106E306079D1007A409C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6881054306079CF007A409C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C688105B306079CF007A409C;
+			remoteInfo = "beta app sport";
+		};
+		C6881078306079D1007A409C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6881054306079CF007A409C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C688105B306079CF007A409C;
+			remoteInfo = "beta app sport";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C688105C306079CF007A409C /* beta app sport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "beta app sport.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C688106D306079D1007A409C /* beta app sportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "beta app sportTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6881077306079D1007A409C /* beta app sportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "beta app sportUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C688109C30607C44007A409C /* AdviceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceEngine.swift; sourceTree = "<group>"; };
+		C68810A830607C44007A409C /* RunTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTrackApp.swift; sourceTree = "<group>"; };
+		C68810C5306091B0007A409C /* beta app sport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "beta app sport.entitlements"; sourceTree = "<group>"; };
+		C68810FB3061400F007A409C /* mapregionhelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapregionhelper.swift; sourceTree = "<group>"; };
+		C688110430614B70007A409C /* notificationmanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationmanager.swift; sourceTree = "<group>"; };
+		C688110D30614FAB007A409C /* locationtracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationtracker.swift; sourceTree = "<group>"; };
+		C6881121306163FC007A409C /* currentlocationprovider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentlocationprovider.swift; sourceTree = "<group>"; };
+		C688112530616435007A409C /* routegenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routegenerator.swift; sourceTree = "<group>"; };
+		C688112A30616C04007A409C /* apptheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apptheme.swift; sourceTree = "<group>"; };
+		C688112E30617D9A007A409C /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		C688113F3061A4C3007A409C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C68811483061ABBF007A409C /* beta-app-sport-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "beta-app-sport-Info.plist"; sourceTree = "<group>"; };
+		C688114A3061AC77007A409C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C688116E3061CDFF007A409C /* Exceptions for "New Folder" folder in "beta app sportTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Views/ShareCardRendered.swift,
+				Views/ShareCardView.swift,
+				Views/sharesheet.swift,
+			);
+			target = C688106C306079D1007A409C /* beta app sportTests */;
+		};
+		C688116F3061CE02007A409C /* Exceptions for "New Folder" folder in "beta app sportUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Views/ShareCardRendered.swift,
+				Views/ShareCardView.swift,
+				Views/sharesheet.swift,
+			);
+			target = C6881076306079D1007A409C /* beta app sportUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C688107A306079D1007A409C /* beta app sportUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "beta app sportUITests";
+			sourceTree = "<group>";
+		};
+		C68810CA30613ACA007A409C /* New Folder */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C688116E3061CDFF007A409C /* Exceptions for "New Folder" folder in "beta app sportTests" target */,
+				C688116F3061CE02007A409C /* Exceptions for "New Folder" folder in "beta app sportUITests" target */,
+			);
+			path = "New Folder";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6881059306079CF007A409C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C688113830619F6E007A409C /* FirebaseAuth in Frameworks */,
+				C688113A30619F6E007A409C /* FirebaseFirestore in Frameworks */,
+				C68811453061AB2C007A409C /* GoogleSignIn in Frameworks */,
+				C68811473061AB2C007A409C /* GoogleSignInSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C688106A306079D1007A409C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6881074306079D1007A409C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6881053306079CF007A409C = {
+			isa = PBXGroup;
+			children = (
+				C68811483061ABBF007A409C /* beta-app-sport-Info.plist */,
+				C68810C5306091B0007A409C /* beta app sport.entitlements */,
+				C68810A930607C44007A409C /* RunTrack */,
+				C688107A306079D1007A409C /* beta app sportUITests */,
+				C688105D306079CF007A409C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C688105D306079CF007A409C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C688105C306079CF007A409C /* beta app sport.app */,
+				C688106D306079D1007A409C /* beta app sportTests.xctest */,
+				C6881077306079D1007A409C /* beta app sportUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C688109D30607C44007A409C /* Advice */ = {
+			isa = PBXGroup;
+			children = (
+				C688109C30607C44007A409C /* AdviceEngine.swift */,
+			);
+			path = Advice;
+			sourceTree = "<group>";
+		};
+		C68810A930607C44007A409C /* RunTrack */ = {
+			isa = PBXGroup;
+			children = (
+				C68811493061AC4A007A409C /* Auth */,
+				C688110C30614F90007A409C /* tracking */,
+				C688110330614B2F007A409C /* notification */,
+				C68810FA30613FED007A409C /* utilities */,
+				C688112930616BBF007A409C /* theme */,
+				C688109D30607C44007A409C /* Advice */,
+				C68810A830607C44007A409C /* RunTrackApp.swift */,
+				C688112E30617D9A007A409C /* assets.xcassets */,
+				C688113F3061A4C3007A409C /* GoogleService-Info.plist */,
+			);
+			path = RunTrack;
+			sourceTree = "<group>";
+		};
+		C68810FA30613FED007A409C /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C68810FB3061400F007A409C /* mapregionhelper.swift */,
+				C688112530616435007A409C /* routegenerator.swift */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		C688110330614B2F007A409C /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				C688110430614B70007A409C /* notificationmanager.swift */,
+			);
+			path = notification;
+			sourceTree = "<group>";
+		};
+		C688110C30614F90007A409C /* tracking */ = {
+			isa = PBXGroup;
+			children = (
+				C688110D30614FAB007A409C /* locationtracker.swift */,
+				C6881121306163FC007A409C /* currentlocationprovider.swift */,
+			);
+			path = tracking;
+			sourceTree = "<group>";
+		};
+		C688112930616BBF007A409C /* theme */ = {
+			isa = PBXGroup;
+			children = (
+				C68810CA30613ACA007A409C /* New Folder */,
+				C688112A30616C04007A409C /* apptheme.swift */,
+			);
+			path = theme;
+			sourceTree = "<group>";
+		};
+		C68811493061AC4A007A409C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C688114A3061AC77007A409C /* AuthManager.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C688105B306079CF007A409C /* beta app sport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6881080306079D1007A409C /* Build configuration list for PBXNativeTarget "beta app sport" */;
+			buildPhases = (
+				C6881058306079CF007A409C /* Sources */,
+				C6881059306079CF007A409C /* Frameworks */,
+				C688105A306079CF007A409C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C68810CA30613ACA007A409C /* New Folder */,
+			);
+			name = "beta app sport";
+			packageProductDependencies = (
+				C688113730619F6E007A409C /* FirebaseAuth */,
+				C688113930619F6E007A409C /* FirebaseFirestore */,
+				C68811443061AB2C007A409C /* GoogleSignIn */,
+				C68811463061AB2C007A409C /* GoogleSignInSwift */,
+			);
+			productName = "beta app sport";
+			productReference = C688105C306079CF007A409C /* beta app sport.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C688106C306079D1007A409C /* beta app sportTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6881085306079D1007A409C /* Build configuration list for PBXNativeTarget "beta app sportTests" */;
+			buildPhases = (
+				C6881069306079D1007A409C /* Sources */,
+				C688106A306079D1007A409C /* Frameworks */,
+				C688106B306079D1007A409C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C688106F306079D1007A409C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C68810CA30613ACA007A409C /* New Folder */,
+			);
+			name = "beta app sportTests";
+			packageProductDependencies = (
+			);
+			productName = "beta app sportTests";
+			productReference = C688106D306079D1007A409C /* beta app sportTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C6881076306079D1007A409C /* beta app sportUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6881088306079D1007A409C /* Build configuration list for PBXNativeTarget "beta app sportUITests" */;
+			buildPhases = (
+				C6881073306079D1007A409C /* Sources */,
+				C6881074306079D1007A409C /* Frameworks */,
+				C6881075306079D1007A409C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6881079306079D1007A409C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C688107A306079D1007A409C /* beta app sportUITests */,
+				C68810CA30613ACA007A409C /* New Folder */,
+			);
+			name = "beta app sportUITests";
+			packageProductDependencies = (
+			);
+			productName = "beta app sportUITests";
+			productReference = C6881077306079D1007A409C /* beta app sportUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6881054306079CF007A409C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					C688105B306079CF007A409C = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					C688106C306079D1007A409C = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = C688105B306079CF007A409C;
+					};
+					C6881076306079D1007A409C = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = C688105B306079CF007A409C;
+					};
+				};
+			};
+			buildConfigurationList = C6881057306079CF007A409C /* Build configuration list for PBXProject "beta app sport" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C6881053306079CF007A409C;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C688113630619F6E007A409C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C68811433061AB2C007A409C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C688105D306079CF007A409C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C688105B306079CF007A409C /* beta app sport */,
+				C688106C306079D1007A409C /* beta app sportTests */,
+				C6881076306079D1007A409C /* beta app sportUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C688105A306079CF007A409C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C68811423061A4C3007A409C /* GoogleService-Info.plist in Resources */,
+				C688113030617D9A007A409C /* assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C688106B306079D1007A409C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C68811403061A4C3007A409C /* GoogleService-Info.plist in Resources */,
+				C688112F30617D9A007A409C /* assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6881075306079D1007A409C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C68811413061A4C3007A409C /* GoogleService-Info.plist in Resources */,
+				C688113130617D9A007A409C /* assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6881058306079CF007A409C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C688114B3061AC77007A409C /* AuthManager.swift in Sources */,
+				C688112830616435007A409C /* routegenerator.swift in Sources */,
+				C68810AB30607C44007A409C /* AdviceEngine.swift in Sources */,
+				C688110630614B70007A409C /* notificationmanager.swift in Sources */,
+				C68810FE3061400F007A409C /* mapregionhelper.swift in Sources */,
+				C68810AE30607C44007A409C /* RunTrackApp.swift in Sources */,
+				C688111030614FAB007A409C /* locationtracker.swift in Sources */,
+				C6881122306163FC007A409C /* currentlocationprovider.swift in Sources */,
+				C688112C30616C04007A409C /* apptheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6881069306079D1007A409C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C688114D3061AC77007A409C /* AuthManager.swift in Sources */,
+				C688112630616435007A409C /* routegenerator.swift in Sources */,
+				C68810B430607C44007A409C /* AdviceEngine.swift in Sources */,
+				C688110730614B70007A409C /* notificationmanager.swift in Sources */,
+				C68810FC3061400F007A409C /* mapregionhelper.swift in Sources */,
+				C68810B730607C44007A409C /* RunTrackApp.swift in Sources */,
+				C688110F30614FAB007A409C /* locationtracker.swift in Sources */,
+				C6881124306163FC007A409C /* currentlocationprovider.swift in Sources */,
+				C688112D30616C04007A409C /* apptheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6881073306079D1007A409C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C68810FD3061400F007A409C /* mapregionhelper.swift in Sources */,
+				C688114C3061AC77007A409C /* AuthManager.swift in Sources */,
+				C6881123306163FC007A409C /* currentlocationprovider.swift in Sources */,
+				C688110530614B70007A409C /* notificationmanager.swift in Sources */,
+				C688112B30616C04007A409C /* apptheme.swift in Sources */,
+				C68810BD30607C44007A409C /* AdviceEngine.swift in Sources */,
+				C688112730616435007A409C /* routegenerator.swift in Sources */,
+				C68810C030607C44007A409C /* RunTrackApp.swift in Sources */,
+				C688110E30614FAB007A409C /* locationtracker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C688106F306079D1007A409C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C688105B306079CF007A409C /* beta app sport */;
+			targetProxy = C688106E306079D1007A409C /* PBXContainerItemProxy */;
+		};
+		C6881079306079D1007A409C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C688105B306079CF007A409C /* beta app sport */;
+			targetProxy = C6881078306079D1007A409C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C6881081306079D1007A409C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "beta app sport.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BB3HG3624R;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "beta-app-sport-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Fleet;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "RunTrack a besoin d'acceder a tes donnees de course pour calculer tes statistiques";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "RunTrack a besoin d'écrire tes courses enregistrées dans l'app Santé.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "RunTrack a besoin d'accéder à ta position pour enregistrer le tracé GPS de tes courses.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Fleet a besoin d'accéder à tes photos pour enregistrer tes récaps de course.";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ousef.beta-app-sport";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		C6881082306079D1007A409C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "beta app sport.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BB3HG3624R;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "beta-app-sport-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Fleet;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "RunTrack a besoin d'acceder a tes donnees de course pour calculer tes statistiques";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "RunTrack a besoin d'écrire tes courses enregistrées dans l'app Santé.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "RunTrack a besoin d'accéder à ta position pour enregistrer le tracé GPS de tes courses.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Fleet a besoin d'accéder à tes photos pour enregistrer tes récaps de course.";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ousef.beta-app-sport";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		C6881083306079D1007A409C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BB3HG3624R;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C6881084306079D1007A409C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = BB3HG3624R;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C6881086306079D1007A409C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BB3HG3624R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ousef.beta-app-sportTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beta app sport.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/beta app sport";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		C6881087306079D1007A409C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BB3HG3624R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ousef.beta-app-sportTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beta app sport.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/beta app sport";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		C6881089306079D1007A409C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BB3HG3624R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ousef.beta-app-sportUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = "beta app sport";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		C688108A306079D1007A409C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BB3HG3624R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ousef.beta-app-sportUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = "beta app sport";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6881057306079CF007A409C /* Build configuration list for PBXProject "beta app sport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6881083306079D1007A409C /* Debug */,
+				C6881084306079D1007A409C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6881080306079D1007A409C /* Build configuration list for PBXNativeTarget "beta app sport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6881081306079D1007A409C /* Debug */,
+				C6881082306079D1007A409C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6881085306079D1007A409C /* Build configuration list for PBXNativeTarget "beta app sportTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6881086306079D1007A409C /* Debug */,
+				C6881087306079D1007A409C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6881088306079D1007A409C /* Build configuration list for PBXNativeTarget "beta app sportUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6881089306079D1007A409C /* Debug */,
+				C688108A306079D1007A409C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C688113630619F6E007A409C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.19.2;
+			};
+		};
+		C68811433061AB2C007A409C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C688113730619F6E007A409C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C688113630619F6E007A409C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C688113930619F6E007A409C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C688113630619F6E007A409C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		C68811443061AB2C007A409C /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C68811433061AB2C007A409C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		C68811463061AB2C007A409C /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C68811433061AB2C007A409C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C6881054306079CF007A409C /* Project object */;
+}

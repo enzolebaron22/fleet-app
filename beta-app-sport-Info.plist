@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.930877056042-um8io60ubuosdhiqgg42k8l0j61qrq4v</string>
+			</array>
+		</dict>
+		<dict/>
+	</array>
+	<key>GIDClientID</key>
+	<string>930877056042-um8io60ubuosdhiqgg42k8l0j61qrq4v.apps.googleusercontent.com</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>instagram-stories</string>
+	</array>
+</dict>
+</plist>

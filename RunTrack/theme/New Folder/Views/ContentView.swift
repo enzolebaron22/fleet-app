@@ -1,0 +1,29 @@
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        TabView {
+            DashboardView()
+                .tabItem {
+                    Label("Résumé", systemImage: "chart.bar.fill")
+                }
+            ActivitiesView()
+                .tabItem {
+                    Label("Activités", systemImage: "list.bullet")
+                }
+            RunRecorderView()
+                .tabItem {
+                    Label("Enregistrer", systemImage: "figure.run.circle.fill")
+                }
+            RecordsView()
+                .tabItem {
+                    Label("Progression", systemImage: "trophy.fill")
+                }
+        }
+    }
+}
+
+#Preview {
+    ContentView()
+        .environmentObject(HealthKitManager())
+}
