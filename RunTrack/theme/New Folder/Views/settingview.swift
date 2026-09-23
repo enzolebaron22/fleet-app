@@ -16,34 +16,6 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 Section {
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
-                        HStack(spacing: 12) {
-                            AvatarView(url: authManager.userPhotoURL, name: authManager.userName)
-                                .frame(width: 44, height: 44)
-
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(authManager.userName.isEmpty ? "Utilisateur" : authManager.userName)
-                                    .font(.headline)
-                                    .foregroundStyle(.white)
-                                Text("Voir mon profil")
-                                    .font(.caption)
-                                    .foregroundStyle(AppTheme.textSecondary)
-                            }
-                        }
-                        .padding(.vertical, 4)
-                    }
-
-                    NavigationLink {
-                        SearchUserView()
-                    } label: {
-                        Label("Trouver des amis", systemImage: "person.2.fill")
-                    }
-                }
-                .listRowBackground(AppTheme.card)
-
-                Section {
                     Toggle("Rappel hebdomadaire", isOn: Binding(
                         get: { notificationManager.isWeeklyReminderEnabled },
                         set: { newValue in

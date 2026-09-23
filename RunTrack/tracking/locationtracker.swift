@@ -32,7 +32,10 @@ final class LocationTracker: NSObject, ObservableObject {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.activityType = .fitness
-        locationManager.distanceFilter = 5 // mètres
+        // Aucun filtre de distance minimum : on veut TOUTES les positions GPS,
+        // y compris dans les virages serrés (passages piétons, ronds-points).
+        // Le tri du bruit se fait ensuite via la précision et la vitesse dans didUpdateLocations.
+        locationManager.distanceFilter = kCLDistanceFilterNone
         authorizationStatus = locationManager.authorizationStatus
     }
 
@@ -132,6 +135,10 @@ extension LocationTracker: CLLocationManagerDelegate {
                         let speed = distance / timeDelta
                         guard speed < 5.5 else { continue }
                     }
+
+                    // Ignore les micro-mouvements (bruit GPS à l'arrêt ou quasi à l'arrêt),
+                    // sans filtrer les vrais petits déplacements dans un virage.
+                    guard distance > 1 else { continue }
 
                     self.distanceMeters += distance
                 }

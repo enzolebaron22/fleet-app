@@ -1,9 +1,13 @@
 import SwiftUI
+import FirebaseAuth
 
 struct DashboardView: View {
     @EnvironmentObject var healthKitManager: HealthKitManager
     @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var socialManager: SocialManager
     @State private var showSettings = false
+    @State private var feedItems: [FeedView.FeedItem] = []
+    @State private var isLoadingFeed = true
     @AppStorage("weeklyGoalKm") private var weeklyGoalKm: Double = 15
 
     private var firstName: String {
@@ -30,6 +34,7 @@ struct DashboardView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: AppTheme.sectionSpacing) {
                     summaryCards
+                    feedSection
                     adviceSection
                 }
                 .padding()
@@ -45,6 +50,16 @@ struct DashboardView: View {
                         .frame(width: 80, height: 22)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
+                    // Réservé pour les futures notifications push (voir roadmap).
+                    Button {
+                    } label: {
+                        Image(systemName: "bell.fill")
+                    }
+                    .tint(AppTheme.accent)
+                    .opacity(0.4)
+                    .disabled(true)
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showSettings = true
                     } label: {
@@ -58,6 +73,7 @@ struct DashboardView: View {
             }
             .refreshable {
                 await healthKitManager.fetchRunningSessions()
+                await loadFeed()
             }
             .task {
                 if !healthKitManager.isAuthorized {
@@ -65,6 +81,9 @@ struct DashboardView: View {
                 } else {
                     await healthKitManager.fetchRunningSessions()
                 }
+            }
+            .task {
+                await loadFeed()
             }
         }
     }
@@ -91,8 +110,48 @@ struct DashboardView: View {
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                 StatCard(title: "Distance", value: String(format: "%.1f km", weekStats.totalDistanceKm), icon: "figure.run")
                 StatCard(title: "Séances", value: "\(weekStats.sessionCount)", icon: "calendar")
-                StatCard(title: "Allure moy.", value: weekStats.sessionCount > 0 ? paceString(weekStats.averagePaceSecondsPerKm) : "—", icon: "speedometer")
-                StatCard(title: "FC moyenne", value: weekStats.averageHeartRate.map { String(format: "%.0f bpm", $0) } ?? "—", icon: "heart.fill")
+            }
+        }
+    }
+
+    private var feedSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Fil d'actualité")
+                .font(.headline)
+                .foregroundStyle(.white)
+
+            if isLoadingFeed {
+                ProgressView()
+                    .tint(AppTheme.accent)
+            } else if feedItems.isEmpty {
+                Text("Pas encore d'encouragement reçu. Ça apparaîtra ici dès que quelqu'un t'en enverra un !")
+                    .font(.caption)
+                    .foregroundStyle(AppTheme.textSecondary)
+                    .appCard()
+            } else {
+                ForEach(feedItems) { item in
+                    HStack(spacing: 12) {
+                        AvatarView(url: item.senderPhotoURL, name: item.senderName)
+                            .frame(width: 40, height: 40)
+
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(item.senderName)
+                                .font(.subheadline)
+                                .bold()
+                                .foregroundStyle(.white)
+                            Text("t'a envoyé un encouragement")
+                                .font(.caption)
+                                .foregroundStyle(AppTheme.textSecondary)
+                        }
+
+                        Spacer()
+
+                        Text(relativeDate(item.createdAt))
+                            .font(.caption2)
+                            .foregroundStyle(AppTheme.textSecondary)
+                    }
+                    .appCard()
+                }
             }
         }
     }
@@ -124,6 +183,48 @@ struct DashboardView: View {
         let minutes = totalSeconds / 60
         let seconds = totalSeconds % 60
         return String(format: "%d:%02d /km", minutes, seconds)
+    }
+
+    private func relativeDate(_ date: Date) -> String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.locale = Locale(identifier: "fr_FR")
+        formatter.unitsStyle = .short
+        return formatter.localizedString(for: date, relativeTo: Date())
+    }
+
+    private func loadFeed() async {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            isLoadingFeed = false
+            return
+        }
+        isLoadingFeed = true
+        let encouragements = await socialManager.fetchEncouragementsReceived(userId: uid)
+
+        var profileCache: [String: PublicProfile] = [:]
+        var loadedItems: [FeedView.FeedItem] = []
+
+        for encouragement in encouragements.prefix(5) {
+            let profile: PublicProfile?
+            if let cached = profileCache[encouragement.fromUserId] {
+                profile = cached
+            } else {
+                profile = await socialManager.fetchPublicProfile(uid: encouragement.fromUserId)
+                if let profile {
+                    profileCache[encouragement.fromUserId] = profile
+                }
+            }
+            loadedItems.append(
+                FeedView.FeedItem(
+                    id: encouragement.id,
+                    senderName: profile?.name ?? "Quelqu'un",
+                    senderPhotoURL: profile?.photoURL,
+                    createdAt: encouragement.createdAt
+                )
+            )
+        }
+
+        feedItems = loadedItems
+        isLoadingFeed = false
     }
 }
 
@@ -261,4 +362,5 @@ private struct AdviceRow: View {
     DashboardView()
         .environmentObject(HealthKitManager())
         .environmentObject(AuthManager())
+        .environmentObject(SocialManager())
 }

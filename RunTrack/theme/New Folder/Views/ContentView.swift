@@ -19,6 +19,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Progression", systemImage: "trophy.fill")
                 }
+            ProfileView()
+                .tabItem {
+                    Label("Profil", systemImage: "person.crop.circle.fill")
+                }
         }
     }
 }
@@ -26,4 +30,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .environmentObject(HealthKitManager())
+        .environmentObject(AuthManager())
 }

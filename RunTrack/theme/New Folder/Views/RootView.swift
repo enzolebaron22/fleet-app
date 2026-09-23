@@ -7,6 +7,11 @@ struct RootView: View {
     @State private var showSplash = true
     @State private var logoScale: CGFloat = 0.7
     @State private var logoOpacity: Double = 0
+    @AppStorage("hasSkippedGoalOnboarding") private var hasSkippedGoalOnboarding: Bool = false
+
+    private var needsGoalOnboarding: Bool {
+        authManager.isSignedIn && authManager.hasLoadedProfile && authManager.goal == nil && !hasSkippedGoalOnboarding
+    }
 
     var body: some View {
         ZStack {
@@ -20,6 +25,9 @@ struct RootView: View {
                 LoginView()
                     .transition(.opacity)
             }
+        }
+        .fullScreenCover(isPresented: .constant(needsGoalOnboarding)) {
+            OnboardingGoalView()
         }
         .onAppear {
             withAnimation(.easeOut(duration: 0.6)) {

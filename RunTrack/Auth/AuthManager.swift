@@ -13,9 +13,13 @@ final class AuthManager: ObservableObject {
     @Published var memberSince: Date?
     @Published var isSigningIn: Bool = false
     @Published var errorMessage: String?
+    @Published var hasLoadedProfile: Bool = false
 
     // Champs publics utilisés pour les suggestions de profil et la recherche.
-    @Published var city: String?
+    @Published var bio: String?
+    @Published var goal: String?
+    @Published var birthDate: Date?
+    @Published var weightKg: Double?
     @Published var averagePaceSecondsPerKm: Double?
     @Published var isMentor: Bool = false
     @Published var username: String?
@@ -32,10 +36,14 @@ final class AuthManager: ObservableObject {
                     await self?.fetchProfile(uid: uid)
                 } else {
                     self?.memberSince = nil
-                    self?.city = nil
+                    self?.bio = nil
+                    self?.goal = nil
+                    self?.birthDate = nil
+                    self?.weightKg = nil
                     self?.averagePaceSecondsPerKm = nil
                     self?.isMentor = false
                     self?.username = nil
+                    self?.hasLoadedProfile = false
                 }
             }
         }
@@ -120,21 +128,36 @@ final class AuthManager: ObservableObject {
             if let timestamp = data?["createdAt"] as? Timestamp {
                 memberSince = timestamp.dateValue()
             }
-            city = data?["city"] as? String
+            bio = data?["bio"] as? String
+            goal = data?["goal"] as? String
+            if let birthTimestamp = data?["birthDate"] as? Timestamp {
+                birthDate = birthTimestamp.dateValue()
+            }
+            weightKg = data?["weightKg"] as? Double
             averagePaceSecondsPerKm = data?["averagePaceSecondsPerKm"] as? Double
             isMentor = data?["isMentor"] as? Bool ?? false
             username = data?["username"] as? String
         } catch {
             // Non bloquant : on affichera simplement le profil sans ces infos.
         }
+        hasLoadedProfile = true
     }
 
     /// Met à jour les infos publiques du profil.
-    func updatePublicProfile(city: String? = nil, averagePaceSecondsPerKm: Double? = nil, isMentor: Bool? = nil) async {
+    func updatePublicProfile(bio: String? = nil, goal: String? = nil, birthDate: Date? = nil, weightKg: Double? = nil, averagePaceSecondsPerKm: Double? = nil, isMentor: Bool? = nil) async {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         var updates: [String: Any] = [:]
-        if let city {
-            updates["city"] = city
+        if let bio {
+            updates["bio"] = bio
+        }
+        if let goal {
+            updates["goal"] = goal
+        }
+        if let birthDate {
+            updates["birthDate"] = Timestamp(date: birthDate)
+        }
+        if let weightKg {
+            updates["weightKg"] = weightKg
         }
         if let averagePaceSecondsPerKm {
             updates["averagePaceSecondsPerKm"] = averagePaceSecondsPerKm
@@ -146,7 +169,10 @@ final class AuthManager: ObservableObject {
 
         do {
             try await Firestore.firestore().collection("users").document(uid).setData(updates, merge: true)
-            if let city { self.city = city }
+            if let bio { self.bio = bio }
+            if let goal { self.goal = goal }
+            if let birthDate { self.birthDate = birthDate }
+            if let weightKg { self.weightKg = weightKg }
             if let averagePaceSecondsPerKm { self.averagePaceSecondsPerKm = averagePaceSecondsPerKm }
             if let isMentor { self.isMentor = isMentor }
         } catch {

@@ -83,12 +83,14 @@ final class SocialManager: ObservableObject {
         let username = data["username"] as? String
         let photoURLString = data["photoURL"] as? String
         let isMentor = data["isMentor"] as? Bool ?? false
+        let bio = data["bio"] as? String
         return PublicProfile(
             id: uid,
             name: name,
             username: username,
             photoURL: (photoURLString?.isEmpty == false) ? URL(string: photoURLString!) : nil,
-            isMentor: isMentor
+            isMentor: isMentor,
+            bio: bio
         )
     }
 }

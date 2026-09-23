@@ -7,4 +7,5 @@ struct PublicProfile: Identifiable {
     let username: String?
     let photoURL: URL?
     let isMentor: Bool
+    let bio: String?
 }
