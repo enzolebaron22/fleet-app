@@ -7,6 +7,8 @@ struct ProfileView: View {
     @State private var showUsernameSetup = false
     @State private var showBioEdit = false
     @State private var showSearch = false
+    @State private var showGoalSetup = false
+    @State private var showPersonalInfoEdit = false
 
     private var allSessions: [RunSession] { healthKitManager.runSessions }
 
@@ -30,6 +32,21 @@ struct ProfileView: View {
         formatter.dateFormat = "MMMM yyyy"
         formatter.locale = Locale(identifier: "fr_FR")
         return "Membre depuis \(formatter.string(from: date).capitalized)"
+    }
+
+    private var currentGoalOption: GoalOption? {
+        GoalCatalog.option(for: authManager.goal)
+    }
+
+    private var ageText: String? {
+        guard let birthDate = authManager.birthDate else { return nil }
+        let age = Calendar.current.dateComponents([.year], from: birthDate, to: Date()).year ?? 0
+        return "\(age) ans"
+    }
+
+    private var weightText: String? {
+        guard let weight = authManager.weightKg else { return nil }
+        return "\(Int(weight)) kg"
     }
 
     var body: some View {
@@ -70,6 +87,10 @@ struct ProfileView: View {
 
                     bioSection
 
+                    goalSection
+
+                    personalInfoSection
+
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                         ProfileStatCard(title: "Distance totale", value: String(format: "%.1f km", totalDistanceKm), icon: "figure.run")
                         ProfileStatCard(title: "Sorties", value: "\(totalSessions)", icon: "calendar")
@@ -104,6 +125,12 @@ struct ProfileView: View {
                     SearchUserView()
                 }
             }
+            .sheet(isPresented: $showGoalSetup) {
+                GoalSetupSheet()
+            }
+            .sheet(isPresented: $showPersonalInfoEdit) {
+                PersonalInfoEditSheet()
+            }
         }
     }
 
@@ -131,6 +158,85 @@ struct ProfileView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } else {
                     Text("Ajouter une bio")
+                        .font(.subheadline)
+                        .foregroundStyle(AppTheme.accent)
+                }
+            }
+            .padding()
+            .appCard()
+        }
+        .buttonStyle(.plain)
+        .padding(.horizontal)
+    }
+
+    @ViewBuilder
+    private var goalSection: some View {
+        Button {
+            showGoalSetup = true
+        } label: {
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Text("Objectif")
+                        .font(.caption)
+                        .bold()
+                        .foregroundStyle(AppTheme.textSecondary)
+                    Spacer()
+                    Image(systemName: "pencil")
+                        .font(.caption)
+                        .foregroundStyle(AppTheme.textSecondary)
+                }
+                if let currentGoalOption {
+                    HStack(spacing: 10) {
+                        Image(systemName: currentGoalOption.icon)
+                            .foregroundStyle(AppTheme.accent)
+                        Text(currentGoalOption.title)
+                            .font(.subheadline)
+                            .foregroundStyle(.white)
+                    }
+                } else {
+                    Text("Choisir un objectif")
+                        .font(.subheadline)
+                        .foregroundStyle(AppTheme.accent)
+                }
+            }
+            .padding()
+            .appCard()
+        }
+        .buttonStyle(.plain)
+        .padding(.horizontal)
+    }
+
+    @ViewBuilder
+    private var personalInfoSection: some View {
+        Button {
+            showPersonalInfoEdit = true
+        } label: {
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Text("Infos")
+                        .font(.caption)
+                        .bold()
+                        .foregroundStyle(AppTheme.textSecondary)
+                    Spacer()
+                    Image(systemName: "pencil")
+                        .font(.caption)
+                        .foregroundStyle(AppTheme.textSecondary)
+                }
+                if ageText != nil || weightText != nil {
+                    HStack(spacing: 16) {
+                        if let ageText {
+                            Label(ageText, systemImage: "birthday.cake.fill")
+                                .font(.subheadline)
+                                .foregroundStyle(.white)
+                        }
+                        if let weightText {
+                            Label(weightText, systemImage: "scalemass.fill")
+                                .font(.subheadline)
+                                .foregroundStyle(.white)
+                        }
+                    }
+                } else {
+                    Text("Renseigner mes infos")
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.accent)
                 }
